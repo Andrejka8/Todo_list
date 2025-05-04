@@ -16,12 +16,22 @@
         <TextBlock Text="To-do list" Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0">
             <TextBox Name="t1" Width="335" Height="30" FontSize="15" Margin="0,0,12,0"></TextBox>
-            <Button Width="33" Content="+" Background="#8e44ad" Foreground="White" Name="Add_button"></Button>
+            <Button Width="33" Content="+" Background="#8e44ad" Foreground="White"></Button>
         </StackPanel>
 
-        <ListBox Name="list" Grid.Row="2" Width="380" Height="290" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></ListBox>
+        <ListBox Name="list" Grid.Row="2" Width="380" Height="290" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="{Binding}" VerticalAlignment="Center" FontSize="15" Margin="0,0,5,0"/>
+                        <Button Content="✅" Width="30" Height="25" FontSize="15" Background="Transparent" BorderThickness="0"/>
+                        <Button Content="🗑️" Width="30" Height="25" FontSize="15" Background="Transparent" BorderThickness="0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-        <Button Grid.Row="3" Content="Smazat vše" Background="#8e44ad" Foreground="White"  Height="30" Width="92" HorizontalAlignment="Center" Name="Delete_all_button"/>
+        <Button Grid.Row="3" Content="Smazat vše" Background="#8e44ad" Foreground="White"  Height="30" Width="92" HorizontalAlignment="Center"/>
 
     </Grid>
 </Window>
