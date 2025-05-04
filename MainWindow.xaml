@@ -15,13 +15,13 @@
         </Grid.RowDefinitions>
         <TextBlock Text="To-do list" Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0">
-            <TextBox Name="zadani" Width="335" Height="30" FontSize="15" Margin="0,0,12,0"></TextBox>
-            <Button Width="33" Content="+" Background="#8e44ad" Foreground="White"></Button>
+            <TextBox Name="t1" Width="335" Height="30" FontSize="15" Margin="0,0,12,0"></TextBox>
+            <Button Width="33" Content="+" Background="#8e44ad" Foreground="White" Name="Add_button"></Button>
         </StackPanel>
-        
-        
 
-        <Button Grid.Row="3"  Content="Smazat vše" Background="#8e44ad" Foreground="White"  Height="30" Width="92" HorizontalAlignment="Center" />
+        <ListBox Name="list" Grid.Row="2" Width="380" Height="290" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></ListBox>
+
+        <Button Grid.Row="3" Content="Smazat vše" Background="#8e44ad" Foreground="White"  Height="30" Width="92" HorizontalAlignment="Center" Name="Delete_all_button"/>
 
     </Grid>
 </Window>
