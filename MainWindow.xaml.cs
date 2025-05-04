@@ -25,6 +25,14 @@ namespace projekt2._0
             InitializeComponent();
         }
 
-       
+        private void Add_Button(object sender, RoutedEventArgs e)
+        {
+            string text = t1.Text.Trim();
+            if (!string.IsNullOrEmpty(text))
+            {
+                list.Items.Add(text);
+                t1.Clear();
+            }
+        }   
     }
 }
