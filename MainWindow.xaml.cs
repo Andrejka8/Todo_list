@@ -33,6 +33,11 @@ namespace projekt2._0
                 list.Items.Add(text);
                 t1.Clear();
             }
-        }   
+        }
+
+        private void Delete_All_Button(object sender, RoutedEventArgs e)
+        {
+            list.Items.Clear();
+        }
     }
 }
