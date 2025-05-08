@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace projekt2._0
+namespace Todo_list
 {
     /// <summary>
     /// Interakční logika pro MainWindow.xaml
