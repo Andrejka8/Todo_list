@@ -47,5 +47,20 @@ namespace projekt2._0
         {
             list.Items.Clear();
         }
+
+        private void Delete_Task_Button(object sender, RoutedEventArgs e)
+        {
+            Button deleteTaskButton = sender as Button;
+            if (deleteTaskButton != null)
+            {
+                StackPanel parent = deleteTaskButton.Parent as StackPanel;
+                if (parent != null)
+                {
+                    TextBlock textBlock = parent.Children[0] as TextBlock;
+                    string vymazat = textBlock.Text;
+                    list.Items.Remove(vymazat);
+                }
+            }
+        }
     }
 }
