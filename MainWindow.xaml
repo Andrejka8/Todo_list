@@ -16,8 +16,8 @@
         
         <TextBlock Text="To-do list" Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0">
-            <TextBox Name="t1" KeyDown="t1_Keyboard" Width="335" Height="30" FontSize="15" Margin="0,0,12,0"></TextBox>
-            <Button Width="33" Content="+" Background="#8e44ad" Foreground="White" Click="Add_Button"></Button>
+            <TextBox Name="t1" KeyDown="t1_Keyboard" Width="335" Height="30" FontSize="15" Margin="0,0,12,0" VerticalContentAlignment="Center"></TextBox>
+            <Button Width="33" Content="+" Background="#9b50ba" FontWeight="Bold" Foreground="White" Click="Add_Button"></Button>
         </StackPanel>
 
         <ListBox Name="list" Grid.Row="2" Width="380" Height="290" HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -32,7 +32,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Grid.Row="3" Content="Smazat vše" Background="#8e44ad" Foreground="White" Height="30" Width="90" HorizontalAlignment="Center" Click="Delete_All_Button"/>
+        <Button Grid.Row="3" Content="Smazat vše" Background="#9b50ba" Foreground="White" Height="30" Width="90" HorizontalAlignment="Center" Click="Delete_All_Button"/>
 
     </Grid>
 </Window>
