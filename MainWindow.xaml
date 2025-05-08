@@ -25,7 +25,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="5">
                         <TextBlock Text="{Binding}" VerticalAlignment="Center" FontSize="15" Margin="0,0,5,0"/>
-                        <Button Content="✅" Width="25" Height="25" FontSize="14" Background="Transparent" BorderThickness="0"/>
+                        <Button Content="✅" Width="25" Height="25" FontSize="14" Background="Transparent" BorderThickness="0" Click="Done_Task_Button"/>
                         <Button Content="🗑️" Width="25" Height="25" FontSize="14" Background="Transparent" BorderThickness="0" Click="Delete_Task_Button"/>
                     </StackPanel>
                 </DataTemplate>

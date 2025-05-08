@@ -62,5 +62,25 @@ namespace projekt2._0
                 }
             }
         }
+        private void Done_Task_Button(object sender, RoutedEventArgs e)
+        {
+            Button doneTaskButton = sender as Button;
+            if (doneTaskButton != null)
+            {
+                StackPanel parent = doneTaskButton.Parent as StackPanel;
+                if (parent != null)
+                {
+                    TextBlock textBlock = parent.Children[0] as TextBlock;
+                    if (textBlock.TextDecorations != TextDecorations.Strikethrough)
+                    {
+                        textBlock.TextDecorations = TextDecorations.Strikethrough;
+                    }
+                    else
+                    {
+                        textBlock.TextDecorations = null;
+                    }
+                }
+            }
+        }
     }
 }
