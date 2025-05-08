@@ -23,6 +23,7 @@ namespace projekt2._0
         public MainWindow()
         {
             InitializeComponent();
+            Date.Text = DateTime.Now.ToString("dd.MM.yyyy");
         }
 
         private void Add_Button(object sender, RoutedEventArgs e)
