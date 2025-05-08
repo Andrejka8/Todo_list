@@ -35,6 +35,14 @@ namespace projekt2._0
             }
         }
 
+        private void t1_Keyboard(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Add_Button(null, null);
+            }
+        }
+
         private void Delete_All_Button(object sender, RoutedEventArgs e)
         {
             list.Items.Clear();

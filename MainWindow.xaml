@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projekt2._0"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="450" Background="LightPink">
+        Title="To-do list by Andy" Height="550" Width="450" Background="LightPink" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -13,9 +13,10 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <TextBlock Text="To-do list" Grid.Row="0" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0">
-            <TextBox Name="t1" Width="335" Height="30" FontSize="15" Margin="0,0,12,0"></TextBox>
+            <TextBox Name="t1" KeyDown="t1_Keyboard" Width="335" Height="30" FontSize="15" Margin="0,0,12,0"></TextBox>
             <Button Width="33" Content="+" Background="#8e44ad" Foreground="White" Click="Add_Button"></Button>
         </StackPanel>
 
@@ -24,14 +25,18 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="5">
                         <TextBlock Text="{Binding}" VerticalAlignment="Center" FontSize="15" Margin="0,0,5,0"/>
-                        <Button Content="✅" Width="30" Height="25" FontSize="15" Background="Transparent" BorderThickness="0"/>
-                        <Button Content="🗑️" Width="30" Height="25" FontSize="15" Background="Transparent" BorderThickness="0"/>
+                        <Button Content="✅" Width="25" Height="25" FontSize="14" Background="Transparent" BorderThickness="0"/>
+                        <Button Content="🗑️" Width="25" Height="25" FontSize="14" Background="Transparent" BorderThickness="0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Grid.Row="3" Content="Smazat vše" Background="#8e44ad" Foreground="White"  Height="30" Width="92" HorizontalAlignment="Center" Click="Delete_All_Button"/>
+        <Button Grid.Row="3" Content="Smazat vše" Background="#8e44ad" Foreground="White" Height="30" Width="90" HorizontalAlignment="Center" Click="Delete_All_Button"/>
 
     </Grid>
 </Window>
+
+    
+    
+    
