@@ -46,7 +46,12 @@ namespace Todo_list
 
         private void Delete_All_Button(object sender, RoutedEventArgs e)
         {
-            list.Items.Clear();
+            MessageBoxResult result = MessageBox.Show("Opravdu chcete smazat všechny úkoly?", "Potvrzení", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                list.Items.Clear();
+            }
         }
 
         private void Delete_Task_Button(object sender, RoutedEventArgs e)
