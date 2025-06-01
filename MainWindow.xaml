@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Todo_list"
         mc:Ignorable="d"
-        Title="To-do list by Andy" Height="550" Width="450" Background="LightPink" WindowStartupLocation="CenterScreen" Icon="/icon.ico">
+        Title="To-do list by Andy" Height="550" Width="450" Background="LightPink" WindowStartupLocation="CenterScreen" Icon="/icon.ico"
+        ResizeMode="CanMinimize">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
