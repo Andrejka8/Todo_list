@@ -28,6 +28,7 @@ namespace Todo_list
         {
             InitializeComponent();
             Date.Text = DateTime.Now.ToString("dd.MM.yyyy");
+            Loaded += MainWindow_Loaded;
 
             if (File.Exists(filePath))
             {
@@ -113,6 +114,11 @@ namespace Todo_list
         {
             string json = JsonConvert.SerializeObject(tasks);
             File.WriteAllText(filePath, json);
+        }
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            t1.Focus();          
+            Keyboard.Focus(t1);
         }
 
     }
