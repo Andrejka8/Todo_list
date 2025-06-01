@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Todo_list
 {
@@ -20,10 +22,26 @@ namespace Todo_list
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly string filePath = "tasks.json";
+        private List<string> tasks = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
             Date.Text = DateTime.Now.ToString("dd.MM.yyyy");
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                tasks = JsonConvert.DeserializeObject<List<string>>(json);
+                if (tasks != null)
+                {
+                    foreach (var task in tasks)
+                    {
+                        list.Items.Add(task);
+                    }
+                }
+            }
+            this.Closing += MainWindow_Closing;
         }
 
         private void Add_Button(object sender, RoutedEventArgs e)
@@ -32,6 +50,7 @@ namespace Todo_list
             if (!string.IsNullOrEmpty(text))
             {
                 list.Items.Add(text);
+                tasks.Add(text);
                 t1.Clear();
             }
         }
@@ -51,6 +70,7 @@ namespace Todo_list
             if (result == MessageBoxResult.Yes)
             {
                 list.Items.Clear();
+                tasks.Clear();
             }
         }
 
@@ -65,6 +85,7 @@ namespace Todo_list
                     TextBlock textBlock = parent.Children[0] as TextBlock;
                     string vymazat = textBlock.Text;
                     list.Items.Remove(vymazat);
+                    tasks.Remove(vymazat);
                 }
             }
         }
@@ -88,5 +109,11 @@ namespace Todo_list
                 }
             }
         }
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string json = JsonConvert.SerializeObject(tasks);
+            File.WriteAllText(filePath, json);
+        }
+
     }
 }
